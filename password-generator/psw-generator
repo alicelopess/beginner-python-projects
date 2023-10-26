@@ -1,14 +1,15 @@
 import uteis
+def main():
+  print('=' * 30)
+  print("Welcome to Password Generator!\nAnswer Some Questions About Your Password[s]:")
+  pwd_dict = uteis.pwd_info()
 
+  print('=' * 30)
+  print('Generating your passwords...'.upper())
+  print('Here are your passwords: ')
 
-print('=' * 30)
-print("Welcome to Password Generator!\nAnswer Some Questions About Your Password[s]:")
-pwd_dict = uteis.pwd_info()
-print('=' * 30)
+  for pwd in uteis.generate_pwd(pwd_dict):
+    print(pwd)
+  print('=' * 30)
 
-print('Generating your passwords...'.upper())
-print('Here are your passwords: ')
-
-for item in uteis.generate_pwd(pwd_dict):
-  print(item)
-print('=' * 30)
+main()
