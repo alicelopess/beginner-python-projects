@@ -1,0 +1,24 @@
+import random
+
+def guess_number(x):
+  number = random.randint(1, x)
+  print('=-' * 25)
+  print('You have 5 chances to guess the number!'.center(50))
+  print('=-' * 25)
+  count = 0
+  while count < 5:
+    guess = int(input(f'Guess a number [0 - {x}]: '))
+    count += 1
+    if count == 5:
+      print(f'Sorry, your chances have ended. The number is {number}!')
+      break
+    if guess == number:
+      print(f'Yay! You have guessed the number {number}!')
+      break
+    elif guess > number:
+      print('Sorry, guess again. Too hight!')
+    elif guess < number:
+      print('Sorry, guess again. Too low!')
+  print('=-' * 25)
+
+guess_number(10)

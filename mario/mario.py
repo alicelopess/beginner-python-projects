@@ -6,17 +6,17 @@ def main():
     height = 0
     while (height < 1 or height > 8):
         height = int(input("Height: "))
-
+    
     #TODO: Print pyramid
     for i in range(height):
-        print(i, end='')
-        for j in range(height - i):
-            print(j, end='')
-        for k in range(height - i):
-            k = height
-            print(k, end='')
+        print(end='')
+        for j in range(height - (i + 1)):
+            print(' ', end='')
+        k = height
+        while k > height - (i + 1):
+            print('#', end='')
             k -= 1
-        print('')
+        print()
         
 if __name__ == "__main__":
     main()
